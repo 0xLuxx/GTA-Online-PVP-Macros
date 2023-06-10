@@ -1,7 +1,7 @@
 ;  ###################################################
 ;  #   Macro for GTA V Online created by 0xLuxxz     #
 ;  #                                                 #
-;  #              Last UPD: 07/03/23                 #
+;  #              Last UPD: 07/10/23                 #
 ;  ###################################################
 
 #InstallKeybdHook
@@ -26,9 +26,7 @@ Hotkeys:
     NumpadDiv::Teleports()
 return
 
-DropBST() {
-    Send, {m}{Enter}{Up 3}{Enter}{Down}{Enter}
-}
+DropBST() { Send, {m}{Enter}{Up 3}{Enter}{Down}{Enter} }
 
 CreatePrivateSession() {
     Process, Exist, GTA5.exe
@@ -43,9 +41,7 @@ CreatePrivateSession() {
     }
 }
 
-GhostCEO() {
-    Send, {m}{Enter}{Up 3}{Enter}{Up 3}{Enter}
-}
+GhostCEO() { Send, {m}{Enter}{Up 3}{Enter}{Up 3}{Enter} }
 
 ActivateThermalVision() {
 	Send, {m}
@@ -59,31 +55,59 @@ EWO() {
 }
 
 KillProcess(){
-	IfWinActive, ahk_class grcWindow
-	{
+	IfWinActive, ahk_class grcWindow {
         Run, taskkill /f /im GTA5.exe
         ExitApp
     }
 }
 
-NoobMode(){
-	Send, {m}{Up}{Enter}{m}
-}
+NoobMode(){ Send, {m}{Up}{Enter}{m} }
 
-RapidRPG(){
-	Send, {4}{LAlt}
-}
+RapidRPG(){ Send, {4}{LAlt} }
 
-RapidSniper(){
-	Send, {4}{x}
+RapidSniper(){ Send, {4}{x} }
+
+isCEO := 0
+isMC := 0
+
+toggleBecomeCEO() {
+	isCEO := !isCEO
+    return
 }
 
 BecomeCEO(){
+	if (!isCEO) {
+        Send, {m}
+        Sleep, 120
+        Send, {Down 6}{Enter 2}
+        toggleBecomeCEO()
+        return
+    }
+    Send, {m}
+    Sleep, 120
+    Send, {Enter}{Up}{Enter}
+    toggleBecomeCEO()
+    return
+}
 
+toggleBecomeCEO() {
+	isMC := !isMC
+    return
 }
 
 BecomeMC(){
-
+	if (!isMC) {
+        Send, {m}
+        Sleep, 120
+        Send, {Down 7}{Enter 2}
+        toggleBecomeCEO()
+        return
+    }
+    Send, {m}
+    Sleep, 120
+    Send, {Enter}{Up}{Enter}
+    toggleBecomeMC()
+    return
 }
 
 BuyRPGammo(){
