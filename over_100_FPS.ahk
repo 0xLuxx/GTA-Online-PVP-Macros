@@ -26,7 +26,9 @@ Hotkeys:
     NumpadDiv::Teleports()
 return
 
-DropBST() { Send, {m}{Enter}{Up 3}{Enter}{Down}{Enter} }
+DropBST() {
+	Send, {m}{Enter}{Up 3}{Enter}{Down}{Enter}
+}
 
 CreatePrivateSession() {
     Process, Exist, GTA5.exe
@@ -41,7 +43,9 @@ CreatePrivateSession() {
     }
 }
 
-GhostCEO() { Send, {m}{Enter}{Up 3}{Enter}{Up 3}{Enter} }
+GhostCEO() {
+	Send, {m}{Enter}{Up 3}{Enter}{Up 3}{Enter}
+}
 
 ActivateThermalVision() {
 	Send, {m}
@@ -55,17 +59,22 @@ EWO() {
 }
 
 KillProcess(){
-	IfWinActive, ahk_class grcWindow {
+	IfWinActive, ahk_class grcWindow
         Run, taskkill /f /im GTA5.exe
         ExitApp
-    }
 }
 
-NoobMode(){ Send, {m}{Up}{Enter}{m} }
+NoobMode(){
+	Send, {m}{Up}{Enter}{m}
+}
 
-RapidRPG(){ Send, {4}{LAlt} }
+RapidRPG(){
+	Send, {4}{LAlt}
+}
 
-RapidSniper(){ Send, {4}{x} }
+RapidSniper(){
+	Send, {4}{x}
+}
 
 isCEO := 0
 isMC := 0
@@ -90,7 +99,7 @@ BecomeCEO(){
     return
 }
 
-toggleBecomeCEO() {
+toggleBecomeMC() {
 	isMC := !isMC
     return
 }
@@ -100,7 +109,7 @@ BecomeMC(){
         Send, {m}
         Sleep, 120
         Send, {Down 7}{Enter 2}
-        toggleBecomeCEO()
+        toggleBecomeMC()
         return
     }
     Send, {m}
