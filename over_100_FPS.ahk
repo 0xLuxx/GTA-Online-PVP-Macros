@@ -1,7 +1,7 @@
 ;  ###################################################
 ;  #   Macro for GTA V Online created by 0xLuxxz     #
 ;  #                                                 #
-;  #              Last UPD: 06/15/23                 #
+;  #              Last UPD: 06/18/23                 #
 ;  ###################################################
 
 ; TODO: Add a bind to stop the script
