@@ -1,10 +1,14 @@
 ;  ###################################################
 ;  #   Macro for GTA V Online created by 0xLuxxz     #
 ;  #                                                 #
-;  #              Last UPD: 06/13/23                 #
+;  #              Last UPD: 06/15/23                 #
 ;  ###################################################
 
+; TODO: Add a bind to stop the script
+
+#NoEnv
 #InstallKeybdHook
+SendMode Input
 #SingleInstance Force
 if not A_IsAdmin {
     Run *RunAs "%A_ScriptFullPath%"
@@ -88,7 +92,7 @@ BecomeCEO(){
 	if (!isCEO) {
         Send, {m}
         Sleep, 120
-        Send, {Down 6}{Enter 2}
+        Send, {Down}{Enter 3}
         toggleBecomeCEO()
         return
     }
@@ -108,7 +112,7 @@ BecomeMC(){
 	if (!isMC) {
         Send, {m}
         Sleep, 120
-        Send, {Down 7}{Enter 2}
+        Send, {Down}{Enter}{Down}{Enter 2}
         toggleBecomeMC()
         return
     }
